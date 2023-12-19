@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> BMI Check</title>
+</head>
+<body>
+<h3>BMI</h3>
+<input id="weight" type="text">
+<input id="height" type="text">
+<button onclick="results()" type="button">Let me know my BMI</button>
+<br>
+<span>Chỉ số của bạn là : </span> <span id="print"></span>
+<script>
+    function results() {
+        let a = parseFloat(document.getElementById('weight').value);
+        let b = parseFloat(document.getElementById('height').value);
+        let bmi = a / (b ** 2);
+        let print = document.getElementById("print");
+        if (bmi < 18.5) {
+            result = "Underweight";
+            print.innerHTML = result
+        } else if (bmi < 20.5) {
+            result = "Normal"
+            print.innerHTML = result
+        } else if (bmi < 30) {
+            result = "Overweight"
+            print.innerHTML = result
+        } else {
+            result = "Obese"
+            print.innerHTML = result
+        }
+    }
+
+
+</script>
+</body>
+</html>
